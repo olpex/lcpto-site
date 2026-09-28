@@ -53,10 +53,6 @@
     </div>
   </div>
 </footer>
-<script>function setTheme(t){document.body.className=t?'theme-'+t:'';localStorage.setItem('lcpto-theme',t);document.querySelectorAll('#themeBar button').forEach(b=>b.classList.toggle('active',b.dataset.theme===t));}setTheme(localStorage.getItem('lcpto-theme')||'');
-addEventListener('scroll',()=>document.querySelector('.top').classList.toggle('scrolled',scrollY>8),{passive:true});
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
-</script>
+<script>function setTheme(t){document.body.className=t?'theme-'+t:'';localStorage.setItem('lcpto-theme',t);document.querySelectorAll('#themeBar button').forEach(b=>b.classList.toggle('active',b.dataset.theme===t));}setTheme(localStorage.getItem('lcpto-theme')||'');</script>
 </body>
 </html>

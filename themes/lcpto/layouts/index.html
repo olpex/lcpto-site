@@ -1,50 +1,56 @@
 {{ define "main" }}
-<section class="hero">
+<section class="hero reveal">
   <div>
-    <div class="badge">Львів · ДСЗ · ПТО</div>
+    <div class="badge"><i></i> Львів · ДСЗ · ПТО — набір триває</div>
     <h1>{{ .Site.Params.hero_title }} <span>для карʼєри і життя</span></h1>
     <p>{{ .Site.Params.hero_sub }}</p>
     <div class="hero-actions">
-      <a class="btn" href="/profesii/perelik-profesij/">Обрати професію →</a>
-      <a class="btn ghost" href="/pages/kontakty/">Контакти</a>
+      <a class="btn btn-primary" href="/profesii/perelik-profesij/">Обрати професію <span class="arrow">→</span></a>
+      <a class="btn btn-ghost" href="/pages/kontakty/">Звʼязатися</a>
     </div>
     <div class="kpis">
       <div class="kpi"><b>15+</b><span>професій</span></div>
-      <div class="kpi"><b>Дуальна</b><span>та дистанційна</span></div>
+      <div class="kpi"><b>Дуальна</b><span>форма</span></div>
       <div class="kpi"><b>Держ.</b><span>служба зайнятості</span></div>
     </div>
   </div>
-  <div class="hero-media">Фото центру / майстерень<br><span style="font-size:12px;opacity:.7">заміни блок на <code>/img/hero.jpg</code> коли буде фото</span></div>
+  <div class="hero-visual" aria-hidden="true">
+    <div class="visual-stack">
+      <div class="v-card"></div>
+      <div class="v-card" style="background:linear-gradient(135deg,#dbeafe,#eff6ff);display:grid;place-items:center;color:#6b8aad;font:600 12px Inter,sans-serif;text-align:center;padding:18px">Фото майстерень<br>та навчальних класів<br><span style="font-weight:500;opacity:.7">додай /static/img/hero.jpg</span></div>
+      <div class="v-float"><span>✦</span><div><b>Навчання з практикою</b><span>майстерні · виробництво · працевлаштування</span></div></div>
+    </div>
+  </div>
 </section>
 
-<section>
+<section class="reveal" d2>
   <h2>Останні новини</h2>
-  <p class="section-lead">Актуальні події, набори та історії слухачів</p>
+  <p class="section-lead">Події, набори та історії слухачів центру</p>
   <div class="cards">
     {{ range first 6 (where site.RegularPages "Type" "news") }}
     <a class="card" href="{{ .RelPermalink }}">
       <div class="card-media">
-        {{ with .Resources.GetMatch "*.jpg" }}<img src="{{ .RelPermalink }}" alt="">{{ else }}<span>фото новини</span>{{ end }}
-        {{ if not (.Resources.GetMatch "*.jpg") }}{{ with .Params.cover }}<img src="{{ . }}" alt="">{{ end }}{{ end }}
+        {{ with .Resources.GetMatch "*.jpg" }}<img src="{{ .RelPermalink }}" alt="" loading="lazy">{{ else }}<span>фото</span>{{ end }}
       </div>
       <div class="card-body">
         {{ with .Date }}<time>{{ .Format "02.01.2006" }}</time>{{ end }}
         <h3>{{ .Title }}</h3>
-        {{ with .Summary }}<p>{{ plainify . | truncate 120 }}</p>{{ end }}
+        {{ with .Summary }}<p>{{ plainify . | truncate 118 }}</p>{{ end }}
+        <div class="card-foot">Читати <span class="a">→</span></div>
       </div>
     </a>
     {{ end }}
   </div>
-  <a class="all" href="/news/">Усі новини</a>
+  <a class="all" href="/news/">Усі новини <span class="a">→</span></a>
 </section>
 
-<section class="quick">
+<section class="quick reveal" d3>
   <h2>Швидкий доступ</h2>
   <div class="cards">
-    <a class="card" href="/profesii/perelik-profesij/"><div class="card-body"><h3>🎓 Професії</h3><p>Перелік спеціальностей центру</p></div></a>
-    <a class="card" href="/profesii/pravyla-prijomu/"><div class="card-body"><h3>📝 Правила прийому</h3><p>Як вступити на навчання</p></div></a>
-    <a class="card" href="/profesii/platni-poslugy/"><div class="card-body"><h3>💳 Платні послуги</h3><p>Вартість навчання 2026</p></div></a>
-    <a class="card" href="/pages/kontakty/"><div class="card-body"><h3>📍 Контакти</h3><p>Адреса, телефони, карта</p></div></a>
+    <a class="card" href="/profesii/perelik-profesij/"><div class="card-body"><h3>🎓 Професії</h3><p>Перелік спеціальностей та напрямів</p><div class="card-foot">Перейти <span class="a">→</span></div></div></a>
+    <a class="card" href="/profesii/pravyla-prijomu/"><div class="card-body"><h3>📝 Вступникам</h3><p>Правила прийому та документи</p><div class="card-foot">Перейти <span class="a">→</span></div></div></a>
+    <a class="card" href="/profesii/platni-poslugy/"><div class="card-body"><h3>💳 Платні послуги</h3><p>Вартість та умови навчання</p><div class="card-foot">Перейти <span class="a">→</span></div></div></a>
+    <a class="card" href="/pages/kontakty/"><div class="card-body"><h3>📍 Контакти</h3><p>Адреса, телефони, карта проїзду</p><div class="card-foot">Перейти <span class="a">→</span></div></div></a>
   </div>
 </section>
 {{ end }}

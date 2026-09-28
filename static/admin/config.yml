@@ -2,7 +2,7 @@ backend:
   name: github
   branch: main
   # Замінити на свій репозиторій перед публікацією
-  repo: OWNER/lcpto-site
+  repo: olpex/lcpto-site
   site_domain: decapcms.org
 
 media_folder: static/img

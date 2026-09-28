@@ -1,34 +1,50 @@
 {{ define "main" }}
 <section class="hero">
-  <h1>{{ .Site.Params.hero_title }}</h1>
-  <p>{{ .Site.Params.hero_sub }}</p>
-  <div class="hero-actions">
-    <a class="btn" href="/profesii/perelik-profesij/">Перелік професій</a>
-    <a class="btn ghost" href="/pages/kontakty/">Контакти</a>
+  <div>
+    <div class="badge">Львів · ДСЗ · ПТО</div>
+    <h1>{{ .Site.Params.hero_title }} <span>для карʼєри і життя</span></h1>
+    <p>{{ .Site.Params.hero_sub }}</p>
+    <div class="hero-actions">
+      <a class="btn" href="/profesii/perelik-profesij/">Обрати професію →</a>
+      <a class="btn ghost" href="/pages/kontakty/">Контакти</a>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><b>15+</b><span>професій</span></div>
+      <div class="kpi"><b>Дуальна</b><span>та дистанційна</span></div>
+      <div class="kpi"><b>Держ.</b><span>служба зайнятості</span></div>
+    </div>
   </div>
+  <div class="hero-media">Фото центру / майстерень<br><span style="font-size:12px;opacity:.7">заміни блок на <code>/img/hero.jpg</code> коли буде фото</span></div>
 </section>
 
-<section class="news-grid">
+<section>
   <h2>Останні новини</h2>
+  <p class="section-lead">Актуальні події, набори та історії слухачів</p>
   <div class="cards">
     {{ range first 6 (where site.RegularPages "Type" "news") }}
     <a class="card" href="{{ .RelPermalink }}">
-      {{ with .Date }}<time>{{ .Format "02.01.2006" }}</time>{{ end }}
-      <h3>{{ .Title }}</h3>
-      {{ with .Summary }}<p>{{ truncate 140 . }}</p>{{ end }}
+      <div class="card-media">
+        {{ with .Resources.GetMatch "*.jpg" }}<img src="{{ .RelPermalink }}" alt="">{{ else }}<span>фото новини</span>{{ end }}
+        {{ if not (.Resources.GetMatch "*.jpg") }}{{ with .Params.cover }}<img src="{{ . }}" alt="">{{ end }}{{ end }}
+      </div>
+      <div class="card-body">
+        {{ with .Date }}<time>{{ .Format "02.01.2006" }}</time>{{ end }}
+        <h3>{{ .Title }}</h3>
+        {{ with .Summary }}<p>{{ plainify . | truncate 120 }}</p>{{ end }}
+      </div>
     </a>
     {{ end }}
   </div>
-  <a class="all" href="/news/">Усі новини →</a>
+  <a class="all" href="/news/">Усі новини</a>
 </section>
 
 <section class="quick">
   <h2>Швидкий доступ</h2>
   <div class="cards">
-    <a class="card" href="/profesii/perelik-profesij/"><h3>🎓 Професії</h3><p>Перелік спеціальностей центру</p></a>
-    <a class="card" href="/profesii/pravyla-prijomu/"><h3>📝 Правила прийому</h3><p>Як вступити на навчання</p></a>
-    <a class="card" href="/profesii/platni-poslugy/"><h3>💳 Платні послуги</h3><p>Вартість навчання 2026</p></a>
-    <a class="card" href="/pages/kontakty/"><h3>📍 Контакти</h3><p>Адреса, телефони, карта</p></a>
+    <a class="card" href="/profesii/perelik-profesij/"><div class="card-body"><h3>🎓 Професії</h3><p>Перелік спеціальностей центру</p></div></a>
+    <a class="card" href="/profesii/pravyla-prijomu/"><div class="card-body"><h3>📝 Правила прийому</h3><p>Як вступити на навчання</p></div></a>
+    <a class="card" href="/profesii/platni-poslugy/"><div class="card-body"><h3>💳 Платні послуги</h3><p>Вартість навчання 2026</p></div></a>
+    <a class="card" href="/pages/kontakty/"><div class="card-body"><h3>📍 Контакти</h3><p>Адреса, телефони, карта</p></div></a>
   </div>
 </section>
 {{ end }}

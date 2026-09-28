@@ -1,0 +1,39 @@
+/* Локальні правки поверх теми Blowfish (файли теми не чіпаємо,
+   щоб оновлення теми не створювало конфліктів) */
+
+/* Текстова колонка по центру. У Blowfish стаття лежить у div.max-w-fit
+   всередині широкої секції, тому без цього текст тулиться вліво,
+   а права половина екрана лишається порожньою. */
+#main-content article > section > div.max-w-fit {
+  margin-inline: auto;
+}
+
+/* Зображення в тексті не розтягуються за межі колонки */
+.article-content img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+/* Заголовки в тексті — трохи повітря зверху */
+.article-content h2 {
+  margin-top: 2rem;
+}
+
+.article-content h3 {
+  margin-top: 1.75rem;
+}
+
+/* Списки посилань усередині тексту — акуратні відступи */
+.article-content ul {
+  padding-inline-start: 1.25rem;
+}
+
+/* Відео-вставки (YouTube) — адаптивні, на всю ширину колонки */
+.article-content iframe,
+.article-content .youtube-embed {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border-radius: 0.5rem;
+}

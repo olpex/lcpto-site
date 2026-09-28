@@ -1,0 +1,37 @@
+backend:
+  name: github
+  branch: main
+  # Замінити на свій репозиторій перед публікацією
+  repo: OWNER/lcpto-site
+  site_domain: decapcms.org
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: news
+    label: Новини
+    folder: content/news
+    create: true
+    slug: "{{year}}{{month}}{{day}}-{{slug}}"
+    fields:
+      - { name: title, label: Заголовок, widget: string }
+      - { name: date, label: Дата, widget: datetime }
+      - { name: summary, label: Короткий опис (показується на головній), widget: text, required: false }
+      - { name: body, label: Текст новини, widget: markdown }
+  - name: pages
+    label: Сторінки
+    folder: content/pages
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: title, label: Заголовок, widget: string }
+      - { name: body, label: Зміст, widget: markdown }
+  - name: profesii
+    label: Професії
+    folder: content/profesii
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { name: title, label: Назва професії, widget: string }
+      - { name: body, label: Опис, widget: markdown }

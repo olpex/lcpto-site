@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} — {{ .Site.Title }}{{ end }}</title>
+{{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{ with .Params.description }}<meta name="description" content="{{ . }}">{{ end }}
+</head>
+<body>
+<div class="wrap theme-bar" id="themeBar" style="display:flex;gap:8px;align-items:center;padding:8px 0;font-size:13px;color:#5b6b7b">
+  <span>Тема:</span>
+  <button data-theme="" class="active" onclick="setTheme('')">Світла</button>
+  <button data-theme="b" onclick="setTheme('b')">Глибока синь</button>
+  <span style="opacity:.6">— перемикається без перенесення контенту</span>
+</div>
+<header class="top">
+  <div class="wrap top-in">
+    <a class="brand" href="{{ .Site.BaseURL }}">
+      <span class="brand-mark">ЛЦПТО</span>
+      <span class="brand-name">Львівський центр професійно-технічної освіти ДСЗ</span>
+    </a>
+    <button class="nav-toggle" aria-label="Меню" onclick="document.body.classList.toggle('nav-open')">☰</button>
+  </div>
+  <nav class="nav">
+    <div class="wrap nav-in">
+      {{ range .Site.Menus.main }}
+      <a href="{{ .URL }}" {{ if .Params.class }}class="{{ .Params.class }}"{{ end }}>{{ .Name }}</a>
+      {{ end }}
+      <a href="https://lcptodcz.lviv.ua/" class="ext">Оригінал ↗</a>
+    </div>
+  </nav>
+</header>
+
+<main class="wrap main">
+{{ block "main" . }}{{ end }}
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <p><strong>{{ .Site.Title }}</strong></p>
+    <p>{{ with .Site.Params.address }}{{ . }}{{ end }} · {{ with .Site.Params.phone }}{{ . }}{{ end }}</p>
+    <p class="muted">Демо-версія на безкоштовному стеку: Cloudflare Pages + Hugo. Контент — з офіційного сайту.</p>
+  </div>
+</footer>
+<script>function setTheme(t){document.body.className=t?'theme-'+t:'';localStorage.setItem('lcpto-theme',t);document.querySelectorAll('#themeBar button').forEach(b=>b.classList.toggle('active',b.dataset.theme===t));}setTheme(localStorage.getItem('lcpto-theme')||'');</script>
+</body>
+</html>

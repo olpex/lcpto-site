@@ -1,8 +1,0 @@
-{{ define "main" }}
-<article class="page news-post">
-  {{ with .Date }}<time class="muted">{{ .Format "02.01.2006 15:04" }}</time>{{ end }}
-  <h1>{{ .Title }}</h1>
-  {{ .Content }}
-  <p class="back"><a href="/news/">← Усі новини</a></p>
-</article>
-{{ end }}

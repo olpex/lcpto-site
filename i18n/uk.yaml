@@ -1,0 +1,34 @@
+# Українська локалізація Blowfish — доповнення та виправлення
+# (перекриває i18n/uk.yaml теми; відсутні ключі падали в англійську)
+
+recent:
+  show_more: "Показати більше"
+
+nav:
+  main_menu: "Головне меню"
+  mobile_menu: "Меню"
+  footer_menu: "Меню сайту"
+  toggle_submenu: "Розгорнути підменю"
+  close_menu: "Закрити меню"
+
+footer:
+  theme_switch: "Змінити тему"
+
+article:
+  related: "Схожі матеріали"
+  read_more: "Читати далі"
+  back_to_top: "Догори"
+  table_of_contents: "Зміст"
+
+list:
+  no_articles: "Матеріалів поки немає"
+
+pagination:
+  next: "Далі"
+  previous: "Назад"
+
+shortcode:
+  alert:
+    note: "Примітка"
+    info: "Інформація"
+    warning: "Попередження"

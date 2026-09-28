@@ -1,0 +1,55 @@
+# -- Основна конфігурація сайту (Blowfish) --
+theme = "blowfish"
+baseURL = "https://ac752e7f.lcpto-site.pages.dev/"
+defaultContentLanguage = "uk"
+enableRobotsTXT = true
+summaryLength = 30
+enableEmoji = true
+buildDrafts = false
+buildFuture = false
+disableLanguages = ["en"]
+
+[pagination]
+  pagerSize = 12
+
+[imaging]
+  anchor = "Center"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+
+[sitemap]
+  changefreq = "weekly"
+  filename = "sitemap.xml"
+  priority = 0.7
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+# static/img доступний і як assets/img — Blowfish шукає картинки через resources.Get
+[module]
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+  [[module.mounts]]
+    source = "static/img"
+    target = "assets/img"
+  [[module.mounts]]
+    source = "layouts"
+    target = "layouts"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "i18n"
+    target = "i18n"
+  [[module.mounts]]
+    source = "data"
+    target = "data"
+  [[module.mounts]]
+    source = "archetypes"
+    target = "archetypes"

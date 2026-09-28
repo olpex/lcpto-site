@@ -30,7 +30,7 @@ summary: "https://mon.gov.ua/ua/osvita/profesijno-tehnichna-osvita/dualna-osvita
 
 Дуальна система навчання є найбільш ефективною, оскільки дає можливість 100% працевлаштування наших випускників на замовлення роботодавця.
 
-![Фото без опису](/img/7567c64e87.pdf)![Фото без опису](/img/0c368c1631.jpg)
+[Фото без опису](/img/7567c64e87.pdf)![Фото без опису](/img/0c368c1631.jpg)
 
 [https://rada.info/upload/users_files/36738974/83a66e5a02e2618c0e45a9b5420a7f84.pdf](https://rada.info/upload/users_files/36738974/83a66e5a02e2618c0e45a9b5420a7f84.pdf)
 

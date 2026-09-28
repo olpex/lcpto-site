@@ -1,0 +1,31 @@
+# -- Головне меню --
+
+[[main]]
+  name = "Головна"
+  pageRef = "/"
+  weight = 5
+
+[[main]]
+  name = "Новини"
+  pageRef = "news"
+  weight = 10
+
+[[main]]
+  name = "Професії"
+  pageRef = "profesii"
+  weight = 20
+
+[[main]]
+  name = "Про заклад"
+  pageRef = "pages/pro-zaklad"
+  weight = 30
+
+[[main]]
+  name = "Вступникам"
+  pageRef = "pages/pravyla-prijomu"
+  weight = 40
+
+[[main]]
+  name = "Контакти"
+  pageRef = "pages/kontakty"
+  weight = 50

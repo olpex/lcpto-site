@@ -1,0 +1,93 @@
+# -- Параметри теми Blowfish --
+
+colorScheme = "ocean"
+defaultAppearance = "light"
+autoSwitchAppearance = true
+
+enableSearch = true
+enableCodeCopy = true
+enableStructuredBreadcrumbs = true
+
+mainSections = ["news"]
+
+disableImageOptimization = false
+hotlinkFeatureImage = false
+thumbnailAspectRatio = "1.5"
+
+highlightCurrentMenuArea = true
+smartTOC = true
+
+fingerprintAlgorithm = "sha512"
+
+copyright = """
+**Львівський центр професійно-технічної освіти ДСЗ**  
+79060, м. Львів, вул. Княгині Ольги, 122 · ЄДРПОУ 36738974  
+Телефон: (032) 232-22-62, (032) 244-13-30 · Пошта: [_profc@locz.gov.ua](mailto:_profc@locz.gov.ua)  
+[Контакти](/pages/kontakty/) · [Усі новини](/news/) · [Про заклад](/pages/pro-zaklad/) · [Адміністрування](/admin/)
+"""
+
+[header]
+  layout = "basic"
+  mobileMenuStyle = "dropdown"
+
+[footer]
+  showMenu = true
+  showCopyright = true
+  showThemeAttribution = false
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+[homepage]
+  layout = "landing"
+  homepageImage = "img/hero.jpg"
+  showRecent = true
+  showRecentItems = 6
+  showMoreLink = true
+  showMoreLinkDest = "news"
+  cardView = true
+
+[article]
+  showDate = true
+  showViews = false
+  showLikes = false
+  showDateUpdated = false
+  showAuthor = false
+  showHero = true
+  heroStyle = "background"
+  layoutBackgroundBlur = true
+  showBreadcrumbs = true
+  showDraftLabel = false
+  showEdit = false
+  showHeadingAnchors = false
+  showPagination = true
+  showReadingTime = true
+  showReadingProgress = true
+  showTableOfContents = false
+  showRelatedContent = true
+  relatedContentLimit = 4
+  showTaxonomies = false
+  showWordCount = false
+  sharingLinks = ["telegram", "facebook", "email"]
+
+[list]
+  showHero = true
+  heroStyle = "background"
+  layoutBackgroundBlur = true
+  showBreadcrumbs = true
+  showSummary = true
+  showTableOfContents = false
+  showCards = true
+  groupByYear = true
+  cardView = true
+  constrainItemsWidth = false
+
+[taxonomy]
+  showTermCount = true
+  showHero = true
+  heroStyle = "background"
+  cardView = false
+
+[term]
+  showHero = true
+  heroStyle = "background"
+  cardView = true
